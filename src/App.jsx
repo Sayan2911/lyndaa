@@ -9,7 +9,8 @@ import { useState } from 'react';
 
 function App() {
 // gemini api
-const genAI = new GoogleGenerativeAI("AIzaSyCSQ2Rtq23SUXgIkrTKf5tM0Pfu1FXYQLA");
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
+
 const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
 const [first, setfirst] = useState(null)
@@ -94,7 +95,7 @@ const utterance=new SpeechSynthesisUtterance(rdata)
       (transfer)?(run(prompt)):(alert("please ask your query before run "))
     }}> <GiGemini /></button>
     </div>
-   
+  
     </div>
     </div>
 
